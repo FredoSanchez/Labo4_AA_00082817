@@ -51,14 +51,26 @@ for (i = 0; i < size; i++)
 cout << arr[i] << " ";
 cout << endl;
 }
+
+
+
+
+void cantidadArreglos(int cant, int stop){
+    if(stop != cant){
+        cout << "Hola" << stop+1 << endl;
+        cantidadArreglos(cant, stop+1);
+    }
+}
+
 // Código principal para utilizarlo
 int main()
 {
-int arr[] = {10, 7, 8, 9, 1, 5};
-int n = sizeof(arr) / sizeof(arr[0]);
-quickSort(arr, 0, n - 1);
-cout << "Sorted array: \n";
-printArray(arr, n);
+    int n;
+    cout << "Cuantos arreglos desea ingresar?: ";
+    cin >> n;
+    cantidadArreglos(n,0);
+//quickSort(arr, 0, n - 1);
+//cout << "Sorted array: \n";
+//printArray(arr, n);
 return 0;
 }
-HeapSor
