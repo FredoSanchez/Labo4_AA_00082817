@@ -64,7 +64,17 @@ void llenarArreglos(int elementos,int paro,int arreglo[]){
         quickSort(arreglo, 0, elementos-1);
         cout << "Sorted array: \n";
         printArray(arreglo, elementos);
+        
+        cout<<"Missing number: ";
+        
+        if((arreglo[elementos-1]%2)==0){
+            cout << arreglo[elementos-1]+2<<endl;
+        }
+        else{
+            cout << arreglo[elementos-1]+1<<endl;
+        }
         cout << endl;
+        
     }
     //int n = sizeof(A) / sizeof(A[0]);
 }
