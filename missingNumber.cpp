@@ -57,12 +57,14 @@ cout << endl;
 
 void llenarArreglos(int elementos,int paro,int arreglo[]){
     if(paro != elementos){
-        cin >> arreglo[paro+1];
+        cout << "Elemento " << paro+1<<": ";
+        cin >> arreglo[paro];
         llenarArreglos(elementos, paro+1, arreglo);
     }else{
         quickSort(arreglo, 0, elementos-1);
         cout << "Sorted array: \n";
         printArray(arreglo, elementos);
+        cout << endl;
     }
     //int n = sizeof(A) / sizeof(A[0]);
 }
