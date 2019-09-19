@@ -67,7 +67,11 @@ void llenarArreglos(int elementos,int paro,int arreglo[]){
         
         cout<<"Missing number: ";
         
-        if((arreglo[elementos-1]%2)==0){
+        
+        if (arreglo[elementos-1]<0){
+            cout<<2;
+        }
+        else if((arreglo[elementos-1]%2)==0){
             cout << arreglo[elementos-1]+2<<endl;
         }
         else{
