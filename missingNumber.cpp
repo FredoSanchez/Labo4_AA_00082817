@@ -55,9 +55,26 @@ cout << endl;
 
 
 
+void llenarArreglos(int elementos,int paro,int arreglo[]){
+    if(paro != elementos){
+        cin >> arreglo[paro+1];
+        llenarArreglos(elementos, paro+1, arreglo);
+    }else{
+        quickSort(arreglo, 0, elementos-1);
+        cout << "Sorted array: \n";
+        printArray(arreglo, elementos);
+    }
+    //int n = sizeof(A) / sizeof(A[0]);
+}
+
 void cantidadArreglos(int cant, int stop){
     if(stop != cant){
-        cout << "Hola" << stop+1 << endl;
+        cout << "Arreglo " << stop+1 << endl;
+        cout << "Tamaño del arreglo " << stop+1 <<": ";
+        int elementos;
+        cin >> elementos;
+        int arreglo[elementos];
+        llenarArreglos(elementos, 0, arreglo);
         cantidadArreglos(cant, stop+1);
     }
 }
@@ -69,8 +86,5 @@ int main()
     cout << "Cuantos arreglos desea ingresar?: ";
     cin >> n;
     cantidadArreglos(n,0);
-//quickSort(arr, 0, n - 1);
-//cout << "Sorted array: \n";
-//printArray(arr, n);
 return 0;
 }
